@@ -38,3 +38,12 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 ## License
 
 [CC0 1.0 (Public Domain)](LICENSE.md)
+
+----------------------------------
+
+### Importing Electron-Forge into existing flow
+
+[Electron Forge](https://www.electronforge.io/import-existing-project)
+
+* npm install --save-dev @electron-forge/cli<br>
+* npm exec --package=@electron-forge/cli -c "electron-forge import"
