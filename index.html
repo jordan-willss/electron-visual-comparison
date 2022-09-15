@@ -1,19 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
-    <link href="./styles.css" rel="stylesheet">
-    <title>Hello World!</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>Visual Comparer</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.min.css" />
+    <script src="./src/index.js" defer></script>
   </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
 
-    <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
+  <body style="background: url('assets/img/background-body.png')">
+    <div class="d-flex flex-column">
+      <div class="d-flex flex-column mx-auto tile">
+        <img
+          class="mx-auto image-thumbnail"
+          id="source-image-thumbnail"
+          src="./assets/img/image-placeholder.jpg"
+        />
+        <div class="d-flex flex-row align-items-baseline">
+          <label
+            class="form-label d-flex align-items-center large-label"
+            id="source-image-path-label"
+            >Path to source image...</label
+          ><button
+            class="btn btn-primary button-primary rounded-button margin-left-20"
+            id="source-image-path-button"
+            type="button"
+          >
+            <strong>·&nbsp;·&nbsp;·</strong><br />
+          </button>
+        </div>
+      </div>
+      <div class="d-flex flex-column mx-auto tile">
+        <img
+          class="mx-auto image-thumbnail"
+          id="actual-image-thumbnail"
+          src="./assets/img/image-placeholder.jpg"
+        />
+        <div class="d-flex flex-row align-items-baseline">
+          <label
+            class="form-label d-flex align-items-center large-label"
+            id="actual-image-path-label"
+            >Path to actual image...</label
+          ><button
+            class="btn btn-primary button-primary rounded-button margin-left-20"
+            id="actual-image-path-button"
+            type="button"
+          >
+            <strong>·&nbsp;·&nbsp;·</strong><br />
+          </button>
+        </div>
+      </div>
+      <div class="d-flex flex-column mx-auto tile">
+        <div class="d-flex flex-row align-items-baseline mx-auto">
+          <label
+            class="form-label d-flex align-items-center large-label"
+            id="save-path-label"
+            >Path to export directory...</label
+          ><button
+            class="btn btn-primary button-primary rounded-button margin-left-20"
+            id="save-path-button"
+            type="button"
+          >
+            <strong>·&nbsp;·&nbsp;·</strong><br />
+          </button>
+        </div>
+        <div class="mx-auto">
+          <label class="form-label" style="width: 400px; margin-top: 24px"
+            >Threshold<input
+              class="form-range"
+              type="range"
+              id="threshold-input"
+              max="100"
+              min="0"
+              step="1"
+              name="threshold"
+              value="0"
+            /><span id="threshold-input-label">Text</span></label
+          >
+        </div>
+      </div>
+      <button
+        class="btn btn-primary mx-auto button-secondary"
+        id="compare-button"
+        type="button"
+        style="margin-bottom: 200px; margin-top: 20px"
+      >
+        Compare Images<i class="fas fa-flask margin-left-10"></i>
+      </button>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>
